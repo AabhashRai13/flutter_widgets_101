@@ -34,7 +34,7 @@ final ImageModel? image;
                   onPressed: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>  DetailPage(lesson: image!,)),
+                      MaterialPageRoute(builder: (context) =>  DetailPage(imageModel: image!,)),
                     );
                   },
 

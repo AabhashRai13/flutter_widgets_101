@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:widget_test/models/image.dart';
 
 class DetailPage extends StatelessWidget {
-  final ImageModel? lesson;
+  final ImageModel? imageModel;
 
-  const DetailPage({Key? key, this.lesson}) : super(key: key);
+  const DetailPage({Key? key, this.imageModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class DetailPage extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  lesson!.img ??
+                  imageModel!.img ??
                       "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80",
                 ),
                 fit: BoxFit.cover,
@@ -72,7 +72,7 @@ class DetailPage extends StatelessWidget {
         ),
         const SizedBox(height: 10.0),
         Text(
-          lesson!.title!,
+          imageModel!.title!,
           style: const TextStyle(color: Colors.white, fontSize: 45.0),
         ),
         const SizedBox(height: 30.0),
@@ -82,7 +82,7 @@ class DetailPage extends StatelessWidget {
   Widget bottomContentText () {
     return
       Text(
-        lesson!.description!,
+        imageModel!.description!,
         style: const TextStyle(fontSize: 18.0),
       );
   }
