@@ -11,7 +11,7 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          topContent(context),
+          topContent(context),bottomContent(context)
         ],
       ),
     );
@@ -77,6 +77,38 @@ class DetailPage extends StatelessWidget {
         ),
         const SizedBox(height: 30.0),
       ],
+    );
+  }
+  Widget bottomContentText () {
+    return
+      Text(
+        lesson!.description!,
+        style: const TextStyle(fontSize: 18.0),
+      );
+  }
+  Widget readButton(BuildContext context) {
+    return Container(
+        padding:const  EdgeInsets.symmetric(vertical: 16.0),
+        width: MediaQuery
+            .of(context)
+            .size
+            .width,
+        child: MaterialButton(
+          onPressed: () => {},
+          color:const Color.fromRGBO(58, 66, 86, 1.0),
+          child:
+          const Text("TAKE THIS LESSON", style: TextStyle(color: Colors.white)),
+        ));
+  }
+  Widget bottomContent (BuildContext context){
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      padding:const EdgeInsets.all(40.0),
+      child: Center(
+        child: Column(
+          children: <Widget>[bottomContentText(), readButton(context)],
+        ),
+      ),
     );
   }
 }
