@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:widget_test/container/container.dart';
 
+import '../models/image.dart';
 import 'description.dart';
 
 class ImageHolder extends StatelessWidget {
-  final String? img;
-  final String? title;
-  final String? description;
-final String? ratings;
-  const ImageHolder({Key? key, this.img, this.description, this.title, this.ratings})
+ final ImageModel? image;
+  const ImageHolder({Key? key, this.image})
       : super(key: key);
 
   @override
@@ -17,6 +15,7 @@ final String? ratings;
       padding: const EdgeInsets.all(8.0),
       child: Container(
         height: 320,
+
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -26,15 +25,16 @@ final String? ratings;
         child: Column(
           children: [
             ContainerClass(
-              img: img,
+              img: image!.img,
               height: 180,
               width: MediaQuery.of(context).size.width,
             ),
+
             Padding(
               padding: const EdgeInsets.only(left: 8),
               child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(title! ?? "",
+                  child: Text(image!.title ?? "",
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -42,7 +42,7 @@ final String? ratings;
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8, top: 2),
-              child: Description(description: description,ratings: ratings,),
+              child: Description(image: image,),
             )
           ],
         ),

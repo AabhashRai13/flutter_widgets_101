@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'images/image_holder.dart';
+import 'list_view/list_view_builder.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,14 +31,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter 101"),
       ),
-      body: const ImageHolder(
-        img:
-            "https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg",
-        title: "Image1",
-        description:
-            "lore ipsum this is nothing but bunch of fake text that may or may not make senseÒ",
-        ratings: "4.5",
-      ),
+      body:  ListViewBuilderClass()
     );
   }
 }
