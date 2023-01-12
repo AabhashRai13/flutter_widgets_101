@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextFormFieldClass extends StatefulWidget {
- const TextFormFieldClass({Key? key}) : super(key: key);
+  const TextFormFieldClass({Key? key}) : super(key: key);
 
   @override
   State<TextFormFieldClass> createState() => _TextFormFieldClassState();
@@ -15,17 +15,32 @@ class _TextFormFieldClassState extends State<TextFormFieldClass> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextFormField(
-          controller: _textEditingController,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextFormField(
 
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+            ),
+            onChanged: (text) {
+              setState(() {
+                displayText = text;
+              });
+            },
+            controller: _textEditingController,
+          ),
         ),
         MaterialButton(
+          color: Colors.blue,
           onPressed: () {
             setState(() {
               displayText = _textEditingController.text;
             });
           },
-          child: const Text("Display text"),
+          child: const Text(
+            "Display text",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         Center(child: Text(displayText))
       ],
