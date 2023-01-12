@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'input_fields/text_form_field.dart';
+import 'input_fields/form_validations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter 101"),
       ),
-      body:  TextFormFieldClass()
+      body:const  MyCustomForm()
     );
   }
 }
