@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'input_fields/form_validations.dart';
+import 'package:widget_test/route_managerment/route_manager.dart';
+import 'screens/first_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const FirstScreen(),
+      onGenerateRoute: RouteGenerator.getRoute,
+      initialRoute: Routes.firstScreen,
     );
   }
 }
@@ -31,7 +34,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter 101"),
       ),
-      body:const  MyCustomForm()
+      body:const  FirstScreen()
     );
   }
 }
