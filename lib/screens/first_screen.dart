@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_test/screens/second_screen.dart';
+import 'package:widget_test/route_managerment/route_manager.dart';
 
 class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -22,12 +22,14 @@ class _FirstScreenState extends State<FirstScreen> {
           Center(
             child: OutlinedButton(
                 onPressed: () async {
-                  passBackData = await
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SecondScreen()),
-                      )
-                  as String;
+                  // passBackData = await
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(builder: (context) => const SecondScreen()),
+                  //     )
+                  // as String;
+                   passBackData = await   Navigator.pushNamed(context, Routes.secondScreen) as String;
+
                 },
                 child: const Text("To second Screen")),
           ),
