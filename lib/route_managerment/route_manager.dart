@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 
+import '../screens/dial_phone_number.dart';
 import '../screens/first_screen.dart';
 import '../screens/second_screen.dart';
+import '../screens/set_phone_number.dart';
 import '../screens/third_screen.dart';
 
 class Routes {
@@ -23,7 +26,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SecondScreen());
       case Routes.thirdScreen:
         return MaterialPageRoute(builder: (_) => const ThirdScreen());
-
+      case Routes.setMobileNumberScreen:
+        return MaterialPageRoute(builder: (_) => const SetPhoneNumber());
+      case Routes.dialNumber:
+        return MaterialPageRoute(builder: (_) => const DialNumber());
       default:
         return unDefinedRoute();
     }

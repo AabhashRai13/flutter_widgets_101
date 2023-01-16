@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FirstScreen(),
+     // home: const FirstScreen(),
       onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.firstScreen,
+      initialRoute: Routes.setMobileNumberScreen,
     );
   }
 }

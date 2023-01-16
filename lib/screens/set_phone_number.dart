@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:widget_test/route_managerment/route_manager.dart';
 
 import '../local_storage/shared_prefrences/prefs.dart';
 
@@ -58,7 +59,7 @@ class _SetPhoneNumberState extends State<SetPhoneNumber> {
                     if (formKey.currentState!.validate()) {
                       _appPreferences.setPhoneNumber(
                           int.parse(_textEditingController.text.trim()));
-                   //   Navigator.pushNamed(context, Routes.dialNumber);
+                      Navigator.pushNamed(context, Routes.dialNumber);
                     }
                   },
                   child: const Text("Save number")),
