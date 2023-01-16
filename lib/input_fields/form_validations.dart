@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
-
   @override
   MyCustomFormState createState() {
     return MyCustomFormState();
@@ -29,10 +28,10 @@ class MyCustomFormState extends State<MyCustomForm> {
               return null;
             },
           ),
-          // TextFormField(
-          //   validator: (input) =>
-          //       input!.isValidEmail() ? null : "Check your email",
-          // ),
+          TextFormField(
+            validator: (input) =>
+                input!.isValidEmail() ? null : "Check your phone number",
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
@@ -57,8 +56,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 
 extension EmailValidator on String {
   bool isValidEmail() {
-    return RegExp(
-            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+    return RegExp(r'(?:\(?\+977\)?)?[9][6-9]\d{8}|01[-]?[0-9]{7}')
         .hasMatch(this);
   }
 }
