@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:widget_test/counter_using_getx/counter_ui.dart';
 
 import '../screens/dial_phone_number.dart';
 import '../screens/first_screen.dart';
@@ -13,6 +14,7 @@ class Routes {
   static const String thirdScreen = "/loginPage";
   static const String setMobileNumberScreen = "/setMobileNumberScreen";
   static const String dialNumber = "/dialNumber";
+  static const String counterWithGetx= "/counterWithGetx";
 }
 
 class RouteGenerator {
@@ -30,6 +32,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SetPhoneNumber());
       case Routes.dialNumber:
         return MaterialPageRoute(builder: (_) => const DialNumber());
+      case Routes.counterWithGetx:
+        return MaterialPageRoute(builder: (_) =>  CounterUi());
       default:
         return unDefinedRoute();
     }
