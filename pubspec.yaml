@@ -37,6 +37,7 @@ dependencies:
   shared_preferences: ^2.0.16
   url_launcher: ^6.1.6
   get: ^4.6.5
+  http: ^0.13.5
 
 
 dev_dependencies:
