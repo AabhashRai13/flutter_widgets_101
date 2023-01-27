@@ -1,5 +1,4 @@
-import 'dart:async';
-import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -45,7 +44,7 @@ class MyStatefulWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() => _apiController.loading.value
-        ? const CircularProgressIndicator()
+        ? const Center(child:  CircularProgressIndicator())
         : ListView.builder(
             itemCount: _apiController.dataResponse.length,
             itemBuilder: (BuildContext context, int index) {
